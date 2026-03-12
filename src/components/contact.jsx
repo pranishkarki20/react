@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import './contact.css';
-
+import {motion} from "framer-motion";
 export default function Contact(){
     const[ name , setName] = useState("");
     const[email , setEmail] = useState("");
@@ -14,8 +14,9 @@ export default function Contact(){
     }
         return (
             <form onSubmit={handleSubmit}>
-                  <h1> Contact Us </h1>
-        <div>
+        <div className='container' id="contact">
+            <div className='scontainer'>
+              <h1> Contact Us </h1>
             <input type = "text" 
             placeholder='Full Name'
             value={name}
@@ -31,8 +32,16 @@ export default function Contact(){
             placeholder = 'Phone number'
             value = {phonenumber}
             onChange = {(e) => SetNumber(e.target.value)}/>
+            </div>
+            <motion.button 
+            whileHover = {{
+                scale: 1.1
+            }
+            }
+             type="submit" className='btn1'> Submit
+            </motion.button>
         </div>
-        <button type="submit">Submit</button>
+        
         </form>
     );
 }

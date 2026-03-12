@@ -1,3 +1,49 @@
+.container {
+  width: 1200px;
+  margin: auto;
+  padding: 20px;
+  border: 2px solid rgb(255, 255, 255);
+  border-radius: 10px;
+  margin-top: 100px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;   
+}
+.container h1{
+    margin-bottom: 10px;
+}
+.container:hover{
+    box-shadow: 7px -8px 20px rgba(0,0,0,0.2); 
+}
+
+.scontainer {
+align-items: flex-start;
+ margin-left: 20px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.scontainer h1{
+    margin-bottom: 10px;
+}
+ .btn1{
+    font-size: 1rem;
+     display: flex;
+     flex-direction: column;
+     align-items: center;
+     background-color: black;
+     color: white;
+     border-radius: 5px;
+     cursor: pointer;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+.btn1:hover{
+    color : black ;
+    background-color: transparent;
+
+}
 form{
     margin-top: 10px;
     margin-bottom: 50px;
@@ -10,5 +56,22 @@ form{
 form > div{
     display: flex;
     flex-direction: column;
+
     gap: 10px;
 }
+
+form input{
+    width: 200px;
+    border-radius: 5px;
+    text-align:  center;
+    background-color: aliceblue;
+    padding:  8px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+
+form input:hover{
+    box-shadow: 0 -8px rgba(0,0,0,0.2);
+}
+
+
