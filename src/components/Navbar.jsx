@@ -1,4 +1,4 @@
-import React from "react";
+ import React from "react";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 
@@ -14,7 +14,7 @@ function Navbar() {
     <motion.nav
       className="navbar"
       initial={{ y: -50, opacity: 0 }}
-      animate={{ y: 0, opacity: 1 }}
+      animate={{ y: 0 , opacity: 1 }}
       transition={{ duration: 0.5 }}
     >
       <h2 className="logo">Kinara.com</h2>
