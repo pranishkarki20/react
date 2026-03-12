@@ -4,7 +4,8 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Login from "./components/login";
 import Footer from "./components/Footer";
 import Home from "./components/Home";
-
+import Product from "./components/Products"
+import Contact from "./components/contact";
 function App() {
   return (
     <BrowserRouter>
@@ -17,6 +18,8 @@ function App() {
                 <Navbar />
                 <main className="content">
                   <Home />
+                  <Product />
+                  <Contact />
                 </main>
                 <Footer />
               </>
