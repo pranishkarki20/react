@@ -1,23 +1,22 @@
-.home{
-  height: 80vh;
+.product{
   display: flex;
   justify-content: center;
   align-items: center;
-  background-image: url("/images/img.jpg");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
   border-radius: 10px;
 }
-.home h1{
-    color: white;
+.product h1{
+    color: rgb(0, 0, 0);
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 .home-container{
   text-align: center;
 }
 
-.btn{
+.pbtn{
+    margin-bottom: 10px;
   font-size: 1.3rem;
   font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
   margin-top: 10px;
@@ -26,8 +25,11 @@
   color: white;
   border: none;
   cursor: pointer;
+  border: 4px solid rgb(79, 44, 44);
   border-radius: 10px;
 }
-.btn:hover{
-  color: aqua;
+.pbtn:hover{
+    box-shadow: inset;
+    background-color: transparent;
+    color: rgb(79, 44, 44);
 }
