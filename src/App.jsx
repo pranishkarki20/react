@@ -6,6 +6,7 @@ import Footer from "./components/Footer";
 import Home from "./components/Home";
 import Product from "./components/Products"
 import Contact from "./components/contact";
+import Admin from "./components/admin"
 function App() {
   return (
     <BrowserRouter>
@@ -18,26 +19,17 @@ function App() {
                 <Navbar />
                 <main className="content">
                   <Home />
+                  <section id="product">
                   <Product />
+                  </section>
                   <Contact />
                 </main>
                 <Footer />
               </>
             }
           />
-
-          <Route
-            path="/login"
-            element={
-              <>
-                <Navbar />
-                <main className="content">
-                  <Login />
-                </main>
-                <Footer />
-              </>
-            }
-          />
+          <Route path="/admin" element={<Admin />} />
+          <Route  path="/login" element={<Login />}/>
         </Routes>
       </div>
     </BrowserRouter>

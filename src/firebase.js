@@ -1,13 +1,15 @@
 import { initializeApp } from "firebase/app";
-import { getAuth} from "firebase/auth"
+import { getAuth } from "firebase/auth";
+
 const firebaseConfig = {
-  apiKey: "AIzaSyASFkx43iFY27STE9dzqW-cNhz_q1MCBY0",
-  authDomain: "kimnara-90e84.firebaseapp.com",
-  projectId: "kimnara-90e84",
-  storageBucket: "kimnara-90e84.firebasestorage.app",
-  messagingSenderId: "417395311458",
-  appId: "1:417395311458:web:e3a2f7ac37df2f6171a23b"
+  apiKey: "AIzaSyAYRPBDWnaX5pmiQfFCUeFz3FoSEipd2mA",
+  authDomain: "kinara-56786.firebaseapp.com",
+  projectId: "kinara-56786",
+  storageBucket: "kinara-56786.firebasestorage.app",
+  messagingSenderId: "1052088542324",
+  appId: "1:1052088542324:web:809c9844ad2b6a95eddd21"
 };
 
-const app = initializeApp(firebaseConfig);
-export const auth = getAuth(app);
+const app = initializeApp(firebaseConfig);   // initialize firebase
+
+export const auth = getAuth(app);            // create auth instance

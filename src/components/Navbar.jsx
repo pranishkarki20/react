@@ -5,8 +5,8 @@ import { motion } from "framer-motion";
 function Navbar() {
 
   const navitems = [
-    { name: "Home", link: "#home" },
-    { name: "Product", link: "#product" },
+    { name: "Home", link: "/" },
+    { name: "Product", link: "/#product" },
     { name: "Contact", link: "#contact" }
   ];
 
