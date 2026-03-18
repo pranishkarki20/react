@@ -1,4 +1,5 @@
 .product{
+  margin-top: 2px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -6,6 +7,15 @@
   background-position: center;
   background-repeat: no-repeat;
   border-radius: 10px;
+  max-width: 100%;
+}
+.product-container{
+  width: 220px;
+  padding: 16px;
+  border: 1px solid #4e0606;
+}
+.product-container:hover{
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15); ;
 }
 .product h1{
     color: rgb(0, 0, 0);
@@ -15,11 +25,66 @@
   text-align: center;
 }
 
+.product-container{
+  width: 100%;
+  text-align: center;
+}
+
+.Productsitems{
+  display: flex;
+  gap: 60px;
+  justify-content: center;
+  align-items: stretch;
+  flex-wrap: wrap; /* optional: moves to next line on small screens */
+}
+
+.product1, .product2, .product3 , .product4, .product5{
+  width: 220px;
+  padding: 16px;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  text-align: center;
+  margin-bottom: 10px;
+}
+ .product1:hover{
+  box-shadow:  0 8px 20px rgba(0, 0, 0, 0.15);;
+ }
+ .product2:hover{
+  box-shadow:  0 8px 20px rgba(0, 0, 0, 0.15);;
+ }
+ .product3:hover{
+  box-shadow:  0 8px 20px rgba(0, 0, 0, 0.15);;
+ }
+ .product4:hover{
+  box-shadow:  0 8px 20px rgba(0, 0, 0, 0.15);;
+ }
+
+.ppbtn{
+  display: block;
+  margin: 10px auto;
+  margin-bottom: 10px;
+  font-size: 0.8rem;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  padding: 10px 20px;
+  background: black;
+  color: white;
+  border: none;
+  cursor: pointer;
+  border: 3px solid rgb(79, 44, 44);
+  border-radius: 10px;
+}
+.ppbtn:hover{
+    box-shadow: inset;
+    background-color: transparent;
+    color: rgb(79, 44, 44);
+}
+
 .pbtn{
-    margin-bottom: 10px;
+  display: block;
+  margin: 10px auto;
+  margin-bottom: 10px;
   font-size: 1.3rem;
   font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-  margin-top: 10px;
   padding: 10px 20px;
   background: black;
   color: white;

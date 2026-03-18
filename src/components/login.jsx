@@ -19,7 +19,7 @@ function Login() {
 
     setTimeout(() => {
       console.log("Login Success:", email);
-      navigate("/admin");
+      navigate("/pages/admin");
       setLoading(false);
     }, 400);
   }
@@ -46,7 +46,7 @@ function Login() {
           />
 
           <div className="Password">
-            <motion.input
+          <motion.input
               whileHover={{ scale: 1.1 }}
               type={showPassword ? "text" : "password"}
               required
