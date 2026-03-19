@@ -12,7 +12,6 @@
 .product-container{
   width: 220px;
   padding: 16px;
-  border: 1px solid #4e0606;
 }
 .product-container:hover{
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15); ;
@@ -38,63 +37,44 @@
   flex-wrap: wrap; /* optional: moves to next line on small screens */
 }
 
-.product1, .product2, .product3 , .product4, .product5{
-  width: 220px;
+.category{
+  display: flex;
+  justify-content: space-around;
+  width: 80%;
+  gap : 140px ;
   padding: 16px;
   border: 1px solid #ddd;
   border-radius: 10px;
   text-align: center;
   margin-bottom: 10px;
-}
- .product1:hover{
-  box-shadow:  0 8px 20px rgba(0, 0, 0, 0.15);;
- }
- .product2:hover{
-  box-shadow:  0 8px 20px rgba(0, 0, 0, 0.15);;
- }
- .product3:hover{
-  box-shadow:  0 8px 20px rgba(0, 0, 0, 0.15);;
- }
- .product4:hover{
-  box-shadow:  0 8px 20px rgba(0, 0, 0, 0.15);;
- }
+  list-style:  none;
 
-.ppbtn{
-  display: block;
-  margin: 10px auto;
-  margin-bottom: 10px;
-  font-size: 0.8rem;
-  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-  padding: 10px 20px;
-  background: black;
-  color: white;
-  border: none;
-  cursor: pointer;
-  border: 3px solid rgb(79, 44, 44);
-  border-radius: 10px;
-}
-.ppbtn:hover{
-    box-shadow: inset;
-    background-color: transparent;
-    color: rgb(79, 44, 44);
 }
 
-.pbtn{
-  display: block;
-  margin: 10px auto;
-  margin-bottom: 10px;
-  font-size: 1.3rem;
-  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-  padding: 10px 20px;
-  background: black;
-  color: white;
-  border: none;
+.category a {
+  text-decoration: none;
+  color: rgb(0, 0, 0)
+}
+
+.category a:hover{
+  color: rgb(16, 103, 103);
   cursor: pointer;
-  border: 4px solid rgb(79, 44, 44);
-  border-radius: 10px;
 }
-.pbtn:hover{
-    box-shadow: inset;
-    background-color: transparent;
-    color: rgb(79, 44, 44);
+
+.card {
+  width: 200px;
+  height: 120px;
+  border: 1px solid #ccc;
+  border-radius: 12px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  cursor: pointer;
 }
+
+.card:hover {
+  transform: scale(1.05);
+}
+
