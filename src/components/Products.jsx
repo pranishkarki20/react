@@ -6,7 +6,7 @@ export default function Product() {
 
   const productitems = [
     { id: 1, name: "Electronics" , link :"/"},
-    { id: 2, name: "Clothes" , link :"/" },
+    { id: 2, name: "Clothes" , link :"/singup" },
     { id: 3, name: "Kitchen" , link :"/" },
     { id: 4, name: "Jewellery" , link :"/" }
   ];
@@ -15,7 +15,7 @@ export default function Product() {
     <section id="product" className="product">
       <div className="product-container">
         
-        <h1>Featured Products</h1>
+        <h1>Category</h1>
 
         <div className="Productsitems">
           <div className = "category">
