@@ -7,7 +7,7 @@ function Navbar() {
 
   const navitems = [
     { name: "Home", link: "/" },
-    { name: "Product", link: "/#product" },
+    { name: "Category", link: "/#category" },
     { name: "Contact", link: "#contact" }
   ];
 

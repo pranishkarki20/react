@@ -4,7 +4,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Login from "./components/login";
 import Footer from "./components/Footer";
 import Home from "./components/Home";
-import Product from "./components/Products"
+import Category from "./components/Categoryy"
 import Contact from "./components/contact";
 import Admin from "./pages/admin"
 function App() {
@@ -19,8 +19,8 @@ function App() {
                 <Navbar />
                 <main className="content">
                   <Home />
-                  <section id="product">
-                  <Product />
+                  <section id="category">
+                  <Category />
                   </section>
                   <Contact />
                 </main>
