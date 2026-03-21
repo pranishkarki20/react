@@ -6,6 +6,7 @@ import Footer from "./components/Footer";
 import Home from "./components/Home";
 import Category from "./components/Categoryy"
 import Contact from "./components/contact";
+import Product from "./components/product";
 import Admin from "./pages/admin"
 function App() {
   return (
@@ -21,6 +22,9 @@ function App() {
                   <Home />
                   <section id="category">
                   <Category />
+                  </section>
+                  <section id="category">
+                  <Product />
                   </section>
                   <Contact />
                 </main>
