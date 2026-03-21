@@ -23,7 +23,7 @@ function App() {
                   <section id="category">
                   <Category />
                   </section>
-                  <section id="category">
+                  <section id="Product">
                   <Product />
                   </section>
                   <Contact />

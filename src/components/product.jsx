@@ -47,7 +47,7 @@ export default function Product(){
                  <Button variant='outlined'  sx ={{
                     margin:"15px auto",
                     color:"black",
-                    bordercolor:"black"
+                    borderColor:"black"
                  }}>
                     View all products
             </Button>
