@@ -7,29 +7,46 @@
   margin-top: 100px;
   text-align: center;
   display: flex;
-  flex-direction: column;
-  align-items: center;   
+  flex-direction: column;  
+
 }
 .container h1{
+    color: black;
     margin-bottom: 10px;
 }
 .container:hover{
     box-shadow: 7px -8px 20px rgba(0,0,0,0.2); 
 }
-
+.Containner{
+display: flex;
+justify-content: flex-end;
+}
+.Row{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
 .scontainer {
-align-items: flex-start;
  margin-left: 20px;
   padding: 20px;
   display: flex;
   flex-direction: column;
+  align-items: right ;
   gap: 20px;
+  width: 250px;
+  box-shadow: 7px -8px 20px rgba(0,0,0,0.2);
 }
 .scontainer h1{
     margin-bottom: 10px;
 }
+.scontainer h6{
+    text-align: left;
+    color:black;
+    margin-bottom: 0px;
+}
  .btn1{
     font-size: 1rem;
+    width: 80px;
      display: flex;
      flex-direction: column;
      align-items: center;

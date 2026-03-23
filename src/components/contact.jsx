@@ -15,14 +15,18 @@ export default function Contact(){
         return (
             <form onSubmit={handleSubmit}>
         <div className='container' id="contact">
+             <h1> Contact Us </h1>
+             <div className='Row'>
+             <div className='scontainer'>
+                <h1>Phone Number</h1>
+             </div>
             <div className='scontainer'>
-              <h1> Contact Us </h1>
+                 <h6>Full Name</h6>
             <input type = "text" 
             placeholder='Full Name'
             value={name}
             onChange={(e) =>setName(e.target.value)}
             />
-
             <input type = "email" 
             placeholder='Email' 
             value={email}
@@ -32,7 +36,6 @@ export default function Contact(){
             placeholder = 'Phone number'
             value = {phonenumber}
             onChange = {(e) => SetNumber(e.target.value)}/>
-            </div>
             <motion.button 
             whileHover = {{
                 scale: 1.1
@@ -40,6 +43,8 @@ export default function Contact(){
             }
              type="submit" className='btn1'> Submit
             </motion.button>
+            </div>
+            </div>
         </div>
         
         </form>
