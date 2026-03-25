@@ -1,17 +1,30 @@
+import { Link, useNavigate } from "react-router-dom";
+import { useAuth } from "../context/AuthContext";
 
 export default function ANavbar() {
+  const { logout } = useAuth();
+  const navigate = useNavigate();
+
+  function handleLogout() {
+    logout();
+    navigate("/");
+  }
+
   return (
     <nav className="anavbar">
       <h2 className="logo">Kinara.com</h2>
       <ul>
         <li>
-          <a href="#home">Home</a>
+          <Link to="/">Home</Link>
         </li>
         <li>
-          <a href="#product">Product</a>
+          <Link to="/#product">Product</Link>
         </li>
-        <a href = "#Messages">Messages </a>
+        <li>
+          <a href="#Messages">Messages</a>
+        </li>
       </ul>
+      <button onClick={handleLogout}>Logout</button>
     </nav>
   );
 }

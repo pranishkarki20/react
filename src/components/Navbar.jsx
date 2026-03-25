@@ -1,9 +1,10 @@
-import React from "react";
 import './navbar.css';
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
+import { useAuth } from "../context/AuthContext";
 
 function Navbar() {
+  const { isAuthenticated, user, logout } = useAuth();
 
   const navitems = [
     { name: "Home", link: "/" },
@@ -16,7 +17,7 @@ function Navbar() {
     <motion.nav
       className="navbar"
       initial={{ y: -50, opacity: 0 }}
-      animate={{ y: 0 , opacity: 1 }}
+      animate={{ y: 0, opacity: 1 }}
       transition={{ duration: 0.5 }}
     >
       <h2 className="logo">Kinara.com</h2>
@@ -28,13 +29,26 @@ function Navbar() {
           </motion.li>
         ))}
       </ul>
-    <div className = "auth-buttons">
-      <Link to="/login">
-        <button className="login-btn">Login</button>
-      </Link>
-      <Link to = "/signup">
-      <button className = "Signup-btn" >Signup</button>
-      </Link></div>
+      <div className="auth-buttons">
+        {isAuthenticated ? (
+          <>
+            <span className="auth-user">Hi, {user?.name || "User"}</span>
+            <Link to="/pages/admin">
+              <button className="login-btn">Dashboard</button>
+            </Link>
+            <button className="Signup-btn" onClick={logout}>Logout</button>
+          </>
+        ) : (
+          <>
+            <Link to="/login">
+              <button className="login-btn">Login</button>
+            </Link>
+            <Link to="/signup">
+              <button className="Signup-btn">Signup</button>
+            </Link>
+          </>
+        )}
+      </div>
     </motion.nav>
   );
 }

@@ -17,6 +17,7 @@ export default function category() {
   return (
     <section id="product" className="product">
       <div className="product-container">
+        
         <div className="Productsitems">
           <div className = "category">
           {productitems.map((item) => (

@@ -17,11 +17,8 @@ export default function Contact(){
         <div className='container' id="contact">
              <h1> Contact Us </h1>
              <div className='Row'>
-             <div className='scontainer'>
-                <h1>Phone Number</h1>
-             </div>
+            
             <div className='scontainer'>
-                 <h6>Full Name</h6>
             <input type = "text" 
             placeholder='Full Name'
             value={name}
@@ -43,7 +40,10 @@ export default function Contact(){
             }
              type="submit" className='btn1'> Submit
             </motion.button>
-            </div>
+            </div> 
+            <div className='scontainer'>
+                <h1>+91 9036327418</h1>
+             </div>
             </div>
         </div>
         

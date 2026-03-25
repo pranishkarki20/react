@@ -57,8 +57,13 @@ nav button {
 nav button:hover{
   color: #00bfff;
 }
- .auth-buttons{
+.auth-buttons{
   display: flex;
   gap: 10px;
   background-color: transparent;
+  align-items: center;
+}
+.auth-user{
+  font-size: 0.95rem;
+  font-weight: 600;
 }

@@ -10,3 +10,12 @@
 .anavbar a {
     text-decoration: none;
 }
+.admin-panel{
+    max-width: 720px;
+    margin: 80px auto;
+    padding: 32px;
+    border-radius: 18px;
+    background: #f7f7f7;
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}

@@ -1,13 +1,15 @@
-
 import Navbar from "./components/Navbar";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Login from "./components/login";
+import Signup from "./components/signup";
 import Footer from "./components/Footer";
 import Home from "./components/Home";
-import Category from "./components/Categoryy"
+import Category from "./components/Categoryy";
 import Contact from "./components/contact";
 import Product from "./components/product";
-import Admin from "./pages/admin"
+import Admin from "./pages/admin";
+import ProtectedRoute from "./components/ProtectedRoute";
+
 function App() {
   return (
     <BrowserRouter>
@@ -21,10 +23,10 @@ function App() {
                 <main className="content">
                   <Home />
                   <section id="category">
-                  <Category />
+                    <Category />
                   </section>
                   <section id="Product">
-                  <Product />
+                    <Product />
                   </section>
                   <Contact />
                 </main>
@@ -32,8 +34,16 @@ function App() {
               </>
             }
           />
-          <Route path="/pages/admin" element={<Admin />} />
-          <Route  path="/login" element={<Login />}/>
+          <Route
+            path="/pages/admin"
+            element={
+              <ProtectedRoute>
+                <Admin />
+              </ProtectedRoute>
+            }
+          />
+          <Route path="/login" element={<Login />} />
+          <Route path="/signup" element={<Signup />} />
           <Route
             path="*"
             element={

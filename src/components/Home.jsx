@@ -9,10 +9,10 @@ return (
     animate={{ opacity: 1, y: 0 }}
     transition={{ duration: 2 }}
     >
-           <motion.video autoPlay loop muted playsInline className="bg-video"
-              initial={{ opacity: 0, y: 50 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 2 }}
+    <motion.video autoPlay loop muted playsInline className="bg-video"
+     initial={{ opacity: 0, y: 50 }} 
+     animate={{ opacity: 1, y: 0 }}
+     transition={{ duration: 2 }}
            >
         <source src = "/product.mp4"/>
     </motion.video>

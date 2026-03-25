@@ -1,27 +1,32 @@
-﻿import { motion } from "framer-motion";
+import { motion } from "framer-motion";
 import "./login.css";
 import { useState } from "react";
 import { useNavigate, Link } from "react-router-dom";
+import { useAuth } from "../context/AuthContext";
 
 const MotionLink = motion(Link);
 
 function Login() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [showPassword] = useState(false);
+  const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
-
+  const { login } = useAuth();
   const navigate = useNavigate();
 
-  function handleSubmit(e) {
+  async function handleSubmit(e) {
     e.preventDefault();
+    setError("");
     setLoading(true);
 
-    setTimeout(() => {
-      console.log("Login Success:", email);
+    try {
+      await login({ email, password });
       navigate("/pages/admin");
+    } catch (err) {
+      setError(err.message);
+    } finally {
       setLoading(false);
-    }, 400);
+    }
   }
 
   return (
@@ -35,6 +40,7 @@ function Login() {
           transition={{ duration: 1 }}
         >
           <h1>Login</h1>
+          <p className="auth-subtitle">Use your account to access the admin dashboard.</p>
 
           <motion.input
             whileHover={{ scale: 1.1 }}
@@ -46,15 +52,17 @@ function Login() {
           />
 
           <div className="Password">
-          <motion.input
+            <motion.input
               whileHover={{ scale: 1.1 }}
-              type={showPassword ? "text" : "password"}
+              type="password"
               required
               value={password}
               placeholder="Password"
               onChange={(e) => setPassword(e.target.value)}
             />
           </div>
+
+          {error ? <p className="auth-error">{error}</p> : null}
 
           <motion.button
             whileHover={{ scale: 1.1 }}
@@ -70,9 +78,7 @@ function Login() {
           </MotionLink>
 
           <motion.div whileHover={{ scale: 1.1 }}>
-            <h3>
-              <a href="https://www.facebook.com">Forget password</a>
-            </h3>
+            <h3><Link to="/signup">Need an account? Sign up</Link></h3>
           </motion.div>
         </motion.div>
       </form>
