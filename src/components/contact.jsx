@@ -43,7 +43,13 @@ export default function Contact(){
             </motion.button>
             </div> 
             <div className='ncontainer'>
+                <h1 className="text-center">Details</h1>
+                <h2>Phone Number</h2>
                 <h1>+91 9036327418</h1>
+                <h2>Email</h2>
+                <h1>Kirina@gmail.com</h1>
+                <h2>Location</h2>
+                <h1>Kathmandu-34 , Nepal</h1>
              </div>
             </div>
         </div>
