@@ -19,6 +19,7 @@ export default function Contact(){
              <div className='Row'>
             
             <div className='scontainer'>
+                <h1> Fill the Form  </h1>
             <input type = "text" 
             placeholder='Full Name'
             value={name}
@@ -41,7 +42,7 @@ export default function Contact(){
              type="submit" className='btn1'> Submit
             </motion.button>
             </div> 
-            <div className='scontainer'>
+            <div className='ncontainer'>
                 <h1>+91 9036327418</h1>
              </div>
             </div>
