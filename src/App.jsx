@@ -5,7 +5,7 @@ import Signup from "./components/signup";
 import Footer from "./components/Footer";
 import Home from "./components/Home";
 import Category from "./components/Categoryy";
-import Contact from "./components/contact";
+import Contact from "./pages/contact";
 import Product from "./components/product";
 import Admin from "./pages/admin";
 import ProtectedRoute from "./components/ProtectedRoute";
@@ -28,7 +28,14 @@ function App() {
                   <section id="Product">
                     <Product />
                   </section>
-                  <Contact />
+                  <section>
+                    <Route
+            path="/pages/contact"
+            element={
+                <Contact />
+            }
+          />
+                  </section>
                 </main>
                 <Footer />
               </>

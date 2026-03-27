@@ -10,7 +10,7 @@ function Navbar() {
     { name: "Home", link: "/" },
     { name: "Category", link: "/#category" },
     { name: "Products", link: "/#product" },
-    { name: "Contact", link: "#contact" }
+    { name: "Contact", link: "/pages/contact" }
   ];
 
   return (
