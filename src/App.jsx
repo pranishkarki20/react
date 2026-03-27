@@ -28,17 +28,18 @@ function App() {
                   <section id="Product">
                     <Product />
                   </section>
-                  <section>
-                    <Route
-            path="/pages/contact"
-            element={
-                <Contact />
-            }
-          />
-                  </section>
                 </main>
                 <Footer />
               </>
+            }
+          />  
+          <Route
+            path="/pages/contact"
+            element={
+              <>
+              <Navbar/>
+                <Contact />
+                </>
             }
           />
           <Route
