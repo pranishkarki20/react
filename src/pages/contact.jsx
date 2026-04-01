@@ -18,20 +18,24 @@ export default function Contact(){
              <h1> Contact Us </h1>
              <div className='Row'>
             
-            <div className='scontainer'>
+            <motion.div 
+            whileHover ={{scale: 1.1}}
+            className='scontainer'>
                 <h1> Fill the Form  </h1>
-            <input type = "text" 
-            placeholder='Full Name'
+                <h3 className = "name"> Full Name</h3>
+            <motion.input 
+            whileHover ={{scale: 1.1}}
+            type = "text" 
             value={name}
             onChange={(e) =>setName(e.target.value)}
             />
+            <h3 className = "name">Email</h3>
             <input type = "email" 
-            placeholder='Email' 
             value={email}
             onChange = {(e) => setEmail(e.target.value)}/>
 
+            <h3 className='name'>Phone Number</h3>
             <input type  = "number"
-            placeholder = 'Phone number'
             value = {phonenumber}
             onChange = {(e) => SetNumber(e.target.value)}/>
             <motion.button 
@@ -41,15 +45,15 @@ export default function Contact(){
             }
              type="submit" className='btn1'> Submit
             </motion.button>
-            </div> 
+            </motion.div> 
             <div className='ncontainer'>
-                <h1 className="text-center">Details</h1>
-                <h2>Phone Number</h2>
-                <h1>+91 9036327418</h1>
-                <h2>Email</h2>
-                <h1>Kirina@gmail.com</h1>
-                <h2>Location</h2>
-                <h1>Kathmandu-34 , Nepal</h1>
+                <h1 className="text-center">Contact Information</h1>
+                <h2 className="info-label">Phone Number</h2>
+                <p className="info-value">+91 9036327418</p>
+                <h2 className="info-label">Email</h2>
+                <p className="info-value">Kirina@gmail.com</p>
+                <h2 className="info-label">Location</h2>
+                <p className="info-value">Kathmandu-34 , Nepal</p>
              </div>
             </div>
         </div>
