@@ -12,9 +12,12 @@ function Admin() {
     <h1>Welcome seller !</h1>
     <div className="Scontainers">
       <div className = "Seller">
-       <h4> Pranish Karki</h4>
+        <img src="/pexels-izafi-29148928.jpg" alt="profile" className="profile-img" />
+        <div className="Seler">
+        <h4>Hello  Pranish Karki</h4>
       </div>
     </div>
+  </div>
   </div>
 </div>
   );
