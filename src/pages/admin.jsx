@@ -8,11 +8,13 @@ function Admin() {
   return (
   <div className="admin-panel">
   <ANavbar />   {/* sidebar */}
-  
   <div className="admin">
-    <h1>Admin Dashboard</h1>
-    <p>Welcome back, {user?.name || "Admin"}.</p>
-    <p>Your account is running in temporary frontend-only mode.</p>
+    <h1>Welcome seller !</h1>
+    <div className="Scontainers">
+      <div className = "Seller">
+       <h4> Pranish Karki</h4>
+      </div>
+    </div>
   </div>
 </div>
   );
