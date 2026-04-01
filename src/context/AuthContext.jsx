@@ -1,24 +1,29 @@
 import { createContext, useContext, useEffect, useState } from "react";
 
 const AuthContext = createContext(null);
-const TOKEN_KEY = "kinara_token";
+const USER_KEY = "kinara_user";
+const USERS_KEY = "kinara_users";
 
-async function request(path, options = {}) {
-  const response = await fetch(path, {
-    headers: {
-      "Content-Type": "application/json",
-      ...(options.headers || {}),
-    },
-    ...options,
-  });
-
-  const data = await response.json().catch(() => ({}));
-
-  if (!response.ok) {
-    throw new Error(data.message || "Request failed");
+function readUsers() {
+  try {
+    const storedUsers = localStorage.getItem(USERS_KEY);
+    return storedUsers ? JSON.parse(storedUsers) : [];
+  } catch {
+    return [];
   }
+}
 
-  return data;
+function saveUsers(users) {
+  localStorage.setItem(USERS_KEY, JSON.stringify(users));
+}
+
+function buildUserRecord({ name, email, password }) {
+  return {
+    id: crypto.randomUUID(),
+    name: name.trim(),
+    email: email.trim().toLowerCase(),
+    password,
+  };
 }
 
 export function AuthProvider({ children }) {
@@ -26,54 +31,69 @@ export function AuthProvider({ children }) {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    const token = localStorage.getItem(TOKEN_KEY);
-
-    if (!token) {
+    try {
+      const storedUser = localStorage.getItem(USER_KEY);
+      setUser(storedUser ? JSON.parse(storedUser) : null);
+    } catch {
+      localStorage.removeItem(USER_KEY);
+      setUser(null);
+    } finally {
       setLoading(false);
-      return;
     }
-
-    request("/api/auth/me", {
-      headers: {
-        Authorization: `Bearer ${token}`,
-      },
-    })
-      .then((data) => {
-        setUser(data.user);
-      })
-      .catch(() => {
-        localStorage.removeItem(TOKEN_KEY);
-        setUser(null);
-      })
-      .finally(() => {
-        setLoading(false);
-      });
   }, []);
 
   async function login(credentials) {
-    const data = await request("/api/auth/login", {
-      method: "POST",
-      body: JSON.stringify(credentials),
-    });
+    const email = credentials.email.trim().toLowerCase();
+    const users = readUsers();
+    const matchedUser = users.find(
+      (storedUser) =>
+        storedUser.email === email && storedUser.password === credentials.password
+    );
 
-    localStorage.setItem(TOKEN_KEY, data.token);
-    setUser(data.user);
-    return data;
+    if (!matchedUser) {
+      throw new Error("Invalid email or password.");
+    }
+
+    const sessionUser = {
+      id: matchedUser.id,
+      name: matchedUser.name,
+      email: matchedUser.email,
+    };
+
+    localStorage.setItem(USER_KEY, JSON.stringify(sessionUser));
+    setUser(sessionUser);
+    return { user: sessionUser };
   }
 
   async function signup(credentials) {
-    const data = await request("/api/auth/signup", {
-      method: "POST",
-      body: JSON.stringify(credentials),
-    });
+    if (credentials.password.length < 6) {
+      throw new Error("Password must be at least 6 characters.");
+    }
 
-    localStorage.setItem(TOKEN_KEY, data.token);
-    setUser(data.user);
-    return data;
+    const users = readUsers();
+    const normalizedEmail = credentials.email.trim().toLowerCase();
+    const existingUser = users.find((storedUser) => storedUser.email === normalizedEmail);
+
+    if (existingUser) {
+      throw new Error("An account with that email already exists.");
+    }
+
+    const newUser = buildUserRecord(credentials);
+    const nextUsers = [...users, newUser];
+    const sessionUser = {
+      id: newUser.id,
+      name: newUser.name,
+      email: newUser.email,
+    };
+
+    saveUsers(nextUsers);
+    localStorage.setItem(USER_KEY, JSON.stringify(sessionUser));
+    setUser(sessionUser);
+    return { user: sessionUser };
   }
 
   function logout() {
-    localStorage.removeItem(TOKEN_KEY);
+    localStorage.removeItem(USER_KEY);
     setUser(null);
   }
 

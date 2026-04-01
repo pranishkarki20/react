@@ -51,7 +51,7 @@ export default function Signup() {
           transition={{ duration: 1 }}
         >
           <h1>Create Account</h1>
-          <p className="auth-subtitle">Register once, then log in with a real backend session.</p>
+          <p className="auth-subtitle">Create a local account to access the admin dashboard.</p>
 
           <motion.input
             whileHover={{ scale: 1.1 }}
@@ -107,3 +107,4 @@ export default function Signup() {
     </div>
   );
 }
+

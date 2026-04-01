@@ -6,14 +6,15 @@ function Admin() {
   const { user } = useAuth();
 
   return (
-    <div>
-      <ANavbar />
-      <div className="admin-panel">
-        <h1>Admin Dashboard</h1>
-        <p>Welcome back, {user?.name || "Admin"}.</p>
-        <p>Your account is authenticated through the backend API.</p>
-      </div>
-    </div>
+  <div className="admin-panel">
+  <ANavbar />   {/* sidebar */}
+  
+  <div className="admin">
+    <h1>Admin Dashboard</h1>
+    <p>Welcome back, {user?.name || "Admin"}.</p>
+    <p>Your account is running in temporary frontend-only mode.</p>
+  </div>
+</div>
   );
 }
 

@@ -40,7 +40,7 @@ function Login() {
           transition={{ duration: 1 }}
         >
           <h1>Login</h1>
-          <p className="auth-subtitle">Use your account to access the admin dashboard.</p>
+          <p className="auth-subtitle">Use your local account to access the admin dashboard.</p>
 
           <motion.input
             whileHover={{ scale: 1.1 }}
@@ -87,3 +87,4 @@ function Login() {
 }
 
 export default Login;
+
