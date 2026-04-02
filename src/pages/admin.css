@@ -38,6 +38,7 @@ html, body {
     gap : 20px ;
 }
 .admin{
+    display : flex ;
     margin-top:70px;
     width: 82%;
     box-shadow: 5px 10px 30px #888888;

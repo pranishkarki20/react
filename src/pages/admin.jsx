@@ -1,7 +1,7 @@
 import ANavbar from "./anavbar";
 import "./admin.css";
 import { useAuth } from "../context/AuthContext";
-
+import Box from "@mui/material/Box"
 function Admin() {
   const { user } = useAuth();
 
@@ -18,6 +18,13 @@ function Admin() {
       </div>
     </div>
   </div>
+  <Box component = "section" 
+   sx = {{p:2 , border: '1px solid grey' , width : 60 , marginLeft: 5 ,marginTop : 2 ,
+    boxShadow:'0 4px 12px rgba(0, 0, 0, 0.15)'
+   }}  
+  >
+        this is a box 
+      </Box>
   </div>
 </div>
   );
