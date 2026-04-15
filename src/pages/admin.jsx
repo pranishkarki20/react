@@ -4,7 +4,13 @@ import { useAuth } from "../context/AuthContext";
 import Box from "@mui/material/Box"
 function Admin() {
   const { user } = useAuth();
-
+  const info = [
+    {id: 1 ,  name:"TotalProduct"},
+    {id:2 , name:"Sales"} ,
+    {id: 3 , name:"Order"},
+    {id: 4 , name : "Return"},
+    {id: 5 , name : "Sales"}
+  ]
   return (
   <div className="admin-panel">
   <ANavbar />   {/* sidebar */}
@@ -17,13 +23,17 @@ function Admin() {
         <h4>Hello  Pranish Karki</h4>
       </div>
     </div>
-  </div>
-  <Box component = "section" 
-   sx = {{p:2 , border: '1px solid grey' , width : 60 , marginLeft: 5 ,marginTop : 2 ,
+    </div>
+  <Box sx = {{p:2 , border: '1px solid grey' , width : 850 , marginLeft: 5 ,marginTop : 2 ,
+  display:"flex" , flexDirection: "row" , gap: 20,
     boxShadow:'0 4px 12px rgba(0, 0, 0, 0.15)'
-   }}  
-  >
-        this is a box 
+   }} >
+     {info.map((item , index) =>(
+      <Box 
+      sx = {{ border:'2px solid black', width: 43, textAlign: 'center' }}>
+    <h6>{item.name}</h6>
+    </Box>
+    ))}
       </Box>
   </div>
 </div>

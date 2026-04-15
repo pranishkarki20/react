@@ -39,6 +39,7 @@ html, body {
 }
 .admin{
     display : flex ;
+    flex-direction: column;
     margin-top:70px;
     width: 82%;
     box-shadow: 5px 10px 30px #888888;
@@ -82,4 +83,7 @@ border: 2px solid white;
 button{
     align-items: center;
     align-self: center;
+}
+.info{
+    background-color: #000000;
 }
