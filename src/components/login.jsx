@@ -47,7 +47,7 @@ function Login() {
         // Store user data with correct key and update AuthContext state
         localStorage.setItem("kinara_user", JSON.stringify(data.user));
         setUserData(data.user);
-        navigate("/pages/admin");
+        navigate("/");
       } else {
         setError(data.message || "Login failed");
       }

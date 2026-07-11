@@ -34,12 +34,9 @@ function Navbar() {
         {isAuthenticated ? (
           <>
             <span className="auth-user">
-              Hi, {user?.name || "User"}
+              Hi, {user?.user_name || "User"}
             </span>
 
-            <Link to="/pages/admin">
-              <button className="login-btn">Dashboard</button>
-            </Link>
 
             <button className="Signup-btn" onClick={logout}>
               Logout
